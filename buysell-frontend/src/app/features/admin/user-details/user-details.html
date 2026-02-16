@@ -1,0 +1,40 @@
+<div class="details-container" *ngIf="user">
+  <div class="header">
+    <button class="btn-back" (click)="navigateToUser()">← Back to Users</button>
+    <h2>User Details</h2>
+  </div>
+  
+  <div class="profile-card">
+    <div class="info-row">
+      <span>Full Name:</span>
+      <strong>{{ user.fullName }}</strong>
+    </div>
+    <div class="info-row">
+      <span>Email:</span>
+      <strong>{{ user.email }}</strong>
+    </div>
+    <div class="info-row">
+      <span>Account Status:</span>
+      <span [class]="user.blocked ? 'status-blocked' : 'status-active'">
+        {{ user.blocked ? 'BLOCKED' : 'ACTIVE' }}
+      </span>
+    </div>
+  </div>
+
+  <div class="action-section">
+    <h3>Admin Actions</h3>
+    <div class="button-group">
+      <button [class]="user.blocked ? 'btn-unblock' : 'btn-block'" (click)="toggleBlockStatus()">
+        {{ user.blocked ? 'Unblock Account' : 'Block Account' }}
+      </button>
+
+      <button class="btn-delete-prod" (click)="deleteProducts()">
+        Delete User Products
+      </button>
+
+      <button class="btn-delete-user" (click)="deleteUser()">
+        Delete User Permanently
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,204 @@
+<div class="sell-wrapper">
+  <h2>Sell Product</h2>
+
+  <form class="sell-card" [formGroup]="form" (ngSubmit)="submit()">
+
+    <!-- Product Name -->
+    <div class="form-group">
+      <label>Product Name</label>
+      <input formControlName="name" placeholder="Only alphabets allowed">
+
+      <small class="error" *ngIf="form.get('name')?.touched && form.get('name')?.errors">
+        Name must contain only letters
+      </small>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea
+        rows="3"
+        formControlName="description"
+        placeholder="Max 200 characters">
+      </textarea>
+
+      <small class="error" *ngIf="form.get('description')?.touched && form.get('description')?.errors">
+        Description is required (max 200 chars)
+      </small>
+    </div>
+
+    <!-- Price & Quantity -->
+    <div class="form-row">
+      <div class="form-group">
+        <label>Price (₹)</label>
+        <!-- <input type="number" formControlName="price"> -->
+        <input  type="number" min="1" step="1"  formControlName="price">
+
+
+        <small class="error" *ngIf="form.get('price')?.touched && form.get('price')?.errors">
+          Price must be greater than 0
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <!-- <input type="number" formControlName="quantity"> -->
+        <input type="number"  min="1" step="1" formControlName="quantity">
+
+
+        <small class="error" *ngIf="form.get('quantity')?.touched && form.get('quantity')?.errors">
+          Quantity must be at least 1
+        </small>
+      </div>
+    </div>
+
+    <!-- Category -->
+    <div class="form-group">
+      <label>Category</label>
+      <select formControlName="categoryId">
+        <option value="">Select Category</option>
+        <option *ngFor="let c of categories" [value]="c.id">
+          {{ c.name }}
+        </option>
+      </select>
+
+      <small class="error" *ngIf="form.get('categoryId')?.touched && form.get('categoryId')?.errors">
+        Category is required
+      </small>
+    </div>
+
+    <!-- <button class="btn-submit" type="submit" [disabled]="loading">
+      {{ loading ? 'Creating...' : 'Create Product' }}
+    </button> -->
+
+    <button
+      class="btn-submit"
+      type="submit"
+      [disabled]="loading || form.invalid"
+    >
+      {{ loading ? 'Creating...' : 'Create Product' }}
+    </button>
+
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="sell-wrapper">
+  <h2>Sell Product</h2>
+
+  <form class="sell-card" [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label>Product Name</label>
+      <input
+        type="text"
+        placeholder="Enter product name"
+        formControlName="name"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea
+        rows="3"
+        placeholder="Enter product description"
+        formControlName="description">
+      </textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Price (₹)</label>
+        <input
+          type="number"
+          placeholder="Price"
+          formControlName="price">
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <input
+          type="number"
+          placeholder="Quantity"
+          formControlName="quantity">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select formControlName="categoryId">
+        <option value="">Select Category</option>
+        <option *ngFor="let c of categories" [value]="c.id">
+          {{ c.name }}
+        </option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="btn-submit"
+      [disabled]="loading || form.invalid">
+      {{ loading ? 'Creating...' : 'Create Product' }}
+    </button>
+
+  </form>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Sell Product</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <input placeholder="Product Name" formControlName="name">
+  <br>
+
+  <textarea placeholder="Description" formControlName="description"></textarea>
+  <br>
+
+  <input type="number" placeholder="Price" formControlName="price">
+  <br>
+
+  <input type="number" placeholder="Quantity" formControlName="quantity">
+  <br>
+ 
+  <select formControlName="categoryId">
+    <option value="">Select Category</option>
+    <option *ngFor="let c of categories" [value]="c.id">
+      {{ c.name }}
+    </option>
+  </select>
+  <br>
+
+  <button type="submit" [disabled]="loading">
+    Create Product
+  </button>
+
+</form> -->

@@ -1,0 +1,67 @@
+<nav *ngIf="isLoggedIn()" class="navbar">
+
+  <!-- LEFT SIDE -->
+  <div class="navbar-left">
+    <strong class="navbar-title">
+      {{ isAdmin() ? 'Admin Dashboard' : 'User Dashboard' }}
+    </strong>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="navbar-right">
+
+    <!-- USER NAV -->
+    <ng-container *ngIf="!isAdmin()">
+      <a routerLink="/user/dashboard">Dashboard</a>
+      <a routerLink="/user/buy">Buy</a>
+      <a routerLink="/user/sell">Sell</a>
+      <a routerLink="/user/listings">My Listings</a>
+      <a routerLink="/user/orders">My Orders</a>
+      <a routerLink="/user/wallet">My Wallet</a>
+      <a routerLink="/user/profile">My Profile</a>
+    </ng-container>
+
+    <!-- ADMIN NAV -->
+    <ng-container *ngIf="isAdmin()">
+      <a routerLink="/admin/dashboard">Dashboard</a>
+      <a routerLink="/admin/users">Users</a>
+      <a routerLink="/admin/products">Products</a>
+      <a routerLink="/admin/orders">Orders</a>
+      <a routerLink="/admin/profile">Profile</a>
+    </ng-container>
+
+    <button class="btn-danger" (click)="logout()">Logout</button>
+  </div>
+
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar">
+    <div class="logo">BuySell</div>
+  
+    <div class="links" *ngIf="auth.isLoggedIn()">
+      <a routerLink="/user/dashboard">Dashboard</a>
+      <a routerLink="/user/buy">Buy</a>
+      <a routerLink="/user/sell">Sell</a>
+      <a routerLink="/user/orders">My Orders</a>
+      <a routerLink="/user/listings">My Listings</a>
+      <a routerLink="/user/wallet">My Wallet</a>
+      <a routerLink="/user/orders">My Orders</a>
+      <a routerLink="/user/sell">Sell</a>
+      <a routerLink="/user/my-listings">My Listings</a>
+      <a routerLink="/admin/dashboard">Admin Dashboard</a>
+      <a routerLink="/admin/users">User Management</a>
+      
+
+
+      <button (click)="logout()">Logout</button>
+    </div>
+  </nav>
+   -->

@@ -1,0 +1,78 @@
+<div class="admin-card">
+  <div class="header-flex">
+    <h2>Product Management</h2>
+    <span class="subtitle">Total Items: {{ products.length }}</span>
+  </div>
+
+  <div *ngIf="loading" class="alert alert-success">Refreshing inventory...</div>
+
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Seller Info</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Management</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>
+          <div style="font-weight: 600; color: #1e293b;">{{ p.name }}</div>
+        </td>
+        <td style="color: #64748b;">{{ p.sellerName }}</td>
+        <td><span class="price-tag">₹{{ p.price }}</span></td>
+        <td>
+          <span class="badge" [ngClass]="{
+            'status-active': p.status === 'ACTIVE' || p.status === 'APPROVED',
+            'status-pending': p.status === 'PENDING',
+            'status-sold': p.status === 'SOLD'
+          }">
+            {{ p.status }}
+          </span>
+        </td>
+        <td>
+          <button class="btn-delete" (click)="deleteProduct(p.id)">
+            Remove Item
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="products.length === 0 && !loading" class="alert alert-error">
+    No products found in the database.
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Product Management</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Seller</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr> 
+
+  <tr *ngFor="let p of products">
+    <td>{{ p.name }}</td>
+    <td>{{ p.sellerName }}</td>
+    <td>₹{{ p.price }}</td>
+    <td>{{ p.status }}</td>
+    <td>
+      <button (click)="deleteProduct(p.id)">Delete</button>
+    </td>
+  </tr>
+</table> -->

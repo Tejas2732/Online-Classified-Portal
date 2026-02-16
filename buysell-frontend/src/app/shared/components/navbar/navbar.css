@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .nav-left .brand {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  .nav-right a {
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .nav-right button {
+    margin-left: 10px;
+  }
+  

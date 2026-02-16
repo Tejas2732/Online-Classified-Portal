@@ -1,0 +1,114 @@
+ /* Page title */
+h2 {
+    margin-bottom: 16px;
+    color: #1f2937;
+    font-weight: 600;
+  }
+  
+  /* Table wrapper */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Table header */
+  th {
+    background: #2563eb;
+    color: #ffffff;
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  /* Table rows */
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+  }
+  
+  /* Alternate row color */
+  tr:nth-child(even) td {
+    background: #f9fafb;
+  }
+  
+  /* Status text */
+  td:nth-child(4) {
+    font-weight: 600;
+  }
+  
+  /* SOLD status */
+  td:nth-child(4):contains("SOLD") {
+    color: #dc2626;
+  }
+  
+  /* Inputs while editing */
+  input {
+    width: 90%;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #cbd5f5;
+    outline: none;
+  }
+  
+  input:focus {
+    border-color: #2563eb;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  /* Edit */
+  button:nth-child(1) {
+    background: #2563eb;
+    color: white;
+  }
+  
+  /* Save */
+  button:nth-child(2) {
+    background: #16a34a;
+    color: white;
+  }
+  
+  /* Cancel */
+  button:nth-child(3) {
+    background: #9ca3af;
+    color: white;
+  }
+  
+  /* Delete */
+  button:last-child {
+    background: #dc2626;
+    color: white;
+  }
+  
+  /* Disabled buttons */
+  button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+  }
+  
+  /* Loading / Empty text */
+  div {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  .error {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  

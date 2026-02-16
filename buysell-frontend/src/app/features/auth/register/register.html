@@ -1,0 +1,155 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>User Registration</h2> 
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      
+     <input type="text" placeholder="Full Name" formControlName="fullName">
+    <div class="error-message" *ngIf="form.get('fullName')?.touched">
+      <span *ngIf="form.get('fullName')?.hasError('required')">Full name is required</span>
+      <span *ngIf="form.get('fullName')?.hasError('minlength')">Minimum 3 characters required</span>
+      <span *ngIf="form.get('fullName')?.hasError('pattern')">Only alphabets and spaces are allowed</span>
+    </div>
+
+      <input type="email" placeholder="Email" formControlName="email">
+      <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Please enter a valid email address
+      </div>
+
+      <input type="password" placeholder="Password" formControlName="password">
+      <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password must be at least 6 characters
+      </div>
+
+      <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+      <div class="error-message" *ngIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.hasError('passwordMismatch')">
+        Passwords do not match
+      </div>
+      <div class="error-message" *ngIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.hasError('required')">
+        Please confirm your password
+      </div>
+
+      <input type="text" placeholder="Phone Number" formControlName="phoneNumber">
+      <div class="error-message" *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
+        Must be 10 digits starting with 6, 7, 8, or 9
+      </div>
+
+      <textarea placeholder="Address" formControlName="address"></textarea>
+      <div class="error-message" *ngIf="form.get('address')?.invalid && form.get('address')?.touched">
+        Address must be between 10 and 200 characters
+      </div>
+
+      <button type="submit" [disabled]="form.invalid || loading" class="submit-btn">
+        {{ loading ? 'Processing...' : 'Register' }}
+      </button>
+    </form>
+
+    <p>
+      Already have an account?
+      <a (click)="naviagteToLogin()">Login</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>User Registration</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="text" placeholder="Full Name" formControlName="fullName">
+      <div class="error-message" *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+        Full name required (min 3 chars)
+      </div>
+
+      <input type="email" placeholder="Email" formControlName="email">
+      <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email required
+      </div>
+
+      <input type="password" placeholder="Password" formControlName="password">
+      <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password must be at least 6 characters
+      </div>
+
+      <input type="text" placeholder="Phone Number" formControlName="phoneNumber">
+      <div class="error-message" *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
+        Phone number must be 10 digits
+      </div>
+
+      <textarea placeholder="Address" formControlName="address"></textarea>
+
+      <button type="submit" [disabled]="loading">
+        Register
+      </button>
+    </form>
+
+    <p>
+      Already have an account?
+      <a (click)="naviagteToLogin()">Login</a>
+    </p>
+  </div>
+</div>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>User Registration</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <input type="text" placeholder="Full Name" formControlName="fullName">
+  <div *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+    Full name required (min 3 chars)
+  </div>
+
+  <input type="email" placeholder="Email" formControlName="email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+    Valid email required
+  </div>
+
+  <input type="password" placeholder="Password" formControlName="password">
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+    Password must be at least 6 characters
+  </div>
+
+  <input type="text" placeholder="Phone Number" formControlName="phoneNumber">
+  <div *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
+    Phone number must be 10 digits
+  </div>
+
+  <textarea placeholder="Address" formControlName="address"></textarea>
+
+  <button type="submit" [disabled]="loading">
+    Register
+  </button>
+</form>
+
+<p>
+  Already have an account?
+  <a (click)="naviagteToLogin()">Login</a>
+</p> -->

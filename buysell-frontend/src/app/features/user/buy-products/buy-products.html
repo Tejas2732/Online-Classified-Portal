@@ -1,0 +1,73 @@
+<h2>Buy Products</h2>
+
+<div *ngIf="loading" class="loading">Loading...</div>
+
+<div *ngIf="products.length === 0 && !loading" class="empty">
+  No products available
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let p of products">
+
+    <h3>{{ p.name }}</h3>
+
+    <p class="desc">{{ p.description }}</p>
+
+    <div class="price">₹{{ p.price }}</div>
+
+    <p class="qty">Available: {{ p.quantity }}</p>
+
+    <div class="seller-info" *ngIf="p.sellerPhone || p.sellerAddress">
+      <p *ngIf="p.sellerPhone">
+        📞 {{ p.sellerPhone }}
+      </p>
+      <p *ngIf="p.sellerAddress">
+        📍 {{ p.sellerAddress }}
+      </p>
+    </div>
+
+    <button (click)="buy(p)" [disabled]="p.quantity === 0">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Buy Products</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="products.length === 0 && !loading">
+  No products available
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let p of products">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.description }}</p>
+    <p><b>₹{{ p.price }}</b></p>
+    <p>Quantity: {{ p.quantity }}</p>
+    <p *ngIf="p.sellerPhone">
+      <b>Phone:</b> {{ p.sellerPhone }}
+    </p>
+    <p *ngIf="p.sellerAddress">
+      <b>Address:</b> {{ p.sellerAddress }}
+    </p>
+    <button (click)="buy(p)" [disabled]="p.quantity === 0">
+      Buy
+    </button>
+  </div>
+</div> -->

@@ -1,0 +1,72 @@
+<div class="management-container">
+  <h2>User Management</h2>
+
+  <table *ngIf="users.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td><strong>{{ u.fullName }}</strong></td>
+        <td>{{ u.email }}</td>
+        <td><span class="role-badge">{{ u.role }}</span></td>
+          <td class="action-buttons">
+            <button class="btn-view" (click)="viewUser(u.id)">View Details</button>
+          </td>
+        <!-- <td class="action-buttons">
+          <button class="btn-delete-user" (click)="deleteUser(u.id)">
+            Delete User
+          </button>
+          <button class="btn-delete-prod" (click)="deleteUserProducts(u.id)">
+            Delete Products
+          </button> 
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="users.length === 0" style="padding: 20px; text-align: center; color: #64748b;">
+    No regular users found in the system.
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>User Management</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Action</th>
+  </tr>
+ 
+  <tr *ngFor="let u of users">
+    <td>{{ u.fullName }}</td>
+    <td>{{ u.email }}</td>
+    <td>{{ u.role }}</td>
+    <td>
+      <button (click)="deleteUser(u.id)">Delete User</button>
+      <button (click)="deleteUserProducts(u.id)">Delete Products</button>
+    </td>
+  </tr>
+</table> -->

@@ -1,0 +1,36 @@
+<div class="admin-profile-wrapper">
+  <div class="admin-card" *ngIf="admin">
+    
+    <div class="admin-card-header">
+      <div class="admin-avatar-box">
+        <span class="admin-initial">{{ admin.fullName.charAt(0) }}</span>
+      </div>
+    </div>
+
+    <div class="admin-card-body">
+      <h2>{{ admin.fullName }}</h2>
+      <span class="admin-role-badge">🛡️ {{ admin.role }}</span>
+
+      <div class="admin-info-list">
+        <div class="info-item">
+          <span class="info-label">Email Address</span>
+          <span class="info-value">{{ admin.email }}</span>
+        </div>
+        
+        <div class="info-item">
+          <span class="info-label">Account Security</span>
+          <span class="info-value" style="color: #16a34a;">Verified Admin</span>
+        </div>
+
+        <div class="info-item" style="border: none;">
+          <span class="info-label">System Access</span>
+          <span class="info-value">Full Access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!admin" style="text-align: center; padding: 50px;">
+    <p>Loading Admin Profile...</p>
+  </div>
+</div>

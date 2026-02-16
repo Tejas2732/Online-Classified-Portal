@@ -1,0 +1,97 @@
+/* ===============================
+   ADMIN PROFILE SPECIFIC
+================================ */
+
+.admin-profile-wrapper {
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Profile Header with Gradient */
+.admin-card-header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.admin-avatar-box {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 4px solid white;
+}
+
+.admin-initial {
+  font-size: 42px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+/* Content Body */
+.admin-card-body {
+  padding: 70px 30px 40px 30px;
+  text-align: center;
+}
+
+.admin-card-body h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+.admin-role-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+  border: 1px solid #fde68a;
+}
+
+.admin-info-list {
+  margin-top: 30px;
+  text-align: left;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.info-label {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.95rem;
+}

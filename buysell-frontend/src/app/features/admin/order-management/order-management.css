@@ -1,0 +1,99 @@
+/* ===============================
+   ORDER MANAGEMENT STYLES
+================================ */
+
+.order-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin: 20px;
+}
+
+.table-container {
+  overflow-x: auto; /* Ensures table is responsive on mobile */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Add these to your existing order-management.css */
+
+.product-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.small-id {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* Adjusting table layout for more columns */
+th, td {
+  padding: 12px 10px; /* Slightly tighter padding for more columns */
+}
+
+.header-flex {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #f1f5f9; 
+  padding: 8px 15px; 
+  border-radius: 8px; 
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+/* Order Number Styling */
+.order-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Enhanced Status Pills */
+.status-pill {
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.status-completed { background: #dcfce7; color: #166534; }
+.status-pending   { background: #fef3c7; color: #92400e; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+.status-shipped   { background: #e0f2fe; color: #0369a1; }
+
+.amount-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.date-text {
+  color: #64748b;
+  font-size: 0.85rem;
+}

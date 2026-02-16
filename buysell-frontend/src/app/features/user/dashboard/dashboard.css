@@ -1,0 +1,83 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+  }
+  
+  /* Grid */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  
+  /* Card */
+  .dash-card {
+    background: #ffffff;
+    border-radius: 18px;
+    height: 220px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    text-align: center;
+  
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .dash-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.25);
+  }
+  
+  /* Icon */
+  .dash-card .icon {
+    font-size: 48px;
+    margin-bottom: 14px;
+  }
+  
+  /* Title */
+  .dash-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 6px 0;
+    color: #111827;
+  }
+  
+  /* Subtitle */
+  .dash-card p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  /* Logout card */
+  .dash-card.logout {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #991b1b;
+  }
+  
+  .dash-card.logout h3,
+  .dash-card.logout p {
+    color: #991b1b;
+  }
+  
+  /* Header */
+  h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  
+  hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin-bottom: 30px;
+  }
+  

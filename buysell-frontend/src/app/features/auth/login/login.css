@@ -1,0 +1,98 @@
+/* ===============================
+   LOGIN PAGE SPECIFIC
+================================ */
+
+/* Center the form on the screen */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Adjust based on navbar height */
+  padding: 20px;
+}
+
+/* Specific styling for the Login Card */
+.auth-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+/* Validation Error Messages */
+.error-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: -8px; /* Pull closer to the input */
+  margin-bottom: 12px;
+}
+
+/* Spacing for the bottom link */
+.auth-card p {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Ensure the submit button is full width for mobile-friendly login */
+.auth-card button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+a{
+    cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.forgot-link-container {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn { background: #ccc; color: black; border: none; padding: 10px; cursor: pointer; border-radius: 4px; flex: 1; }
+.reset-btn { background: #2563eb; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 4px; flex: 1; }

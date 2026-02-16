@@ -1,0 +1,210 @@
+<!-- <h2>My Listings</h2>
+
+<div *ngIf="products.length === 0">
+  No products listed
+</div>
+
+<div *ngFor="let p of products">
+  {{ p.name }} - ₹{{ p.price }}
+</div>
+
+ -->
+
+ <h2>My Listings</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let p of products">
+
+    <!-- NAME -->
+    <td>
+      <span *ngIf="editingProductId !== p.id">
+        {{ p.name }}
+      </span>
+
+      <div *ngIf="editingProductId === p.id">
+        <input
+          [(ngModel)]="editData.name"
+          (ngModelChange)="validateName()"
+          placeholder="Product name"
+          maxlength="50"
+        />
+        <div class="error" *ngIf="errors.name">
+          {{ errors.name }}
+        </div>
+      </div>
+    </td>
+
+    <!-- PRICE -->
+    <td>
+      <span *ngIf="editingProductId !== p.id">
+        ₹{{ p.price }}
+      </span>
+
+      <div *ngIf="editingProductId === p.id">
+        <input
+          type="number"
+          [(ngModel)]="editData.price"
+          (ngModelChange)="validatePrice()"
+          min="1"
+          placeholder="Price"
+        />
+        <div class="error" *ngIf="errors.price">
+          {{ errors.price }}
+        </div>
+      </div>
+    </td>
+
+    <!-- QUANTITY -->
+    <td>
+      <span *ngIf="editingProductId !== p.id">
+        {{ p.quantity }}
+      </span>
+
+      <div *ngIf="editingProductId === p.id">
+        <input
+          type="number"
+          [(ngModel)]="editData.quantity"
+          (ngModelChange)="validateQuantity()"
+          min="1"
+          placeholder="Quantity"
+        />
+        <div class="error" *ngIf="errors.quantity">
+          {{ errors.quantity }}
+        </div>
+      </div>
+    </td>
+
+    <!-- STATUS -->
+    <td>
+      {{ p.status }}
+    </td>
+
+    <!-- ACTIONS -->
+    <td>
+      <button
+        *ngIf="editingProductId !== p.id"
+        (click)="edit(p)"
+        [disabled]="p.status === 'SOLD'"
+      >
+        Edit
+      </button>
+
+      <button
+        *ngIf="editingProductId === p.id"
+        (click)="save(p.id)"
+        [disabled]="!isFormValid()"
+      >
+        Save
+      </button>
+
+      <button
+        *ngIf="editingProductId === p.id"
+        (click)="cancelEdit()"
+      >
+        Cancel
+      </button>
+
+      <button
+        (click)="delete(p.id)"
+        [disabled]="p.status === 'SOLD'"
+      >
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>
+
+<!-- STATES -->
+<div *ngIf="loading" style="margin-top:10px">
+  Loading...
+</div>
+
+<div *ngIf="!loading && products.length === 0" style="margin-top:10px">
+  No products listed yet
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<h2>My Listings</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let p of products">
+    <td>
+      <span *ngIf="editingProductId !== p.id">{{ p.name }}</span>
+      <input *ngIf="editingProductId === p.id"
+             [(ngModel)]="editData.name">
+    </td>
+
+    <td>
+      <span *ngIf="editingProductId !== p.id">₹{{ p.price }}</span>
+      <input type="number"
+             *ngIf="editingProductId === p.id"
+             [(ngModel)]="editData.price">
+    </td>
+
+    <td>
+      <span *ngIf="editingProductId !== p.id">{{ p.quantity }}</span>
+      <input type="number"
+             *ngIf="editingProductId === p.id"
+             [(ngModel)]="editData.quantity">
+    </td>
+
+    <td>{{ p.status }}</td>
+
+    <td>
+      <button *ngIf="editingProductId !== p.id"
+              (click)="edit(p)"
+              [disabled]="p.status === 'SOLD'">
+        Edit
+      </button> 
+
+      <button *ngIf="editingProductId === p.id"
+              (click)="save(p.id)">
+        Save
+      </button>
+
+      <button *ngIf="editingProductId === p.id"
+              (click)="cancelEdit()">
+        Cancel
+      </button>
+
+      <button (click)="delete(p.id)"
+              [disabled]="p.status === 'SOLD'">
+        Delete
+      </button>
+    </td>
+  </tr>
+  <div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading && products.length === 0">
+  No products listed yet
+</div>
+</table>  -->
+
+
+

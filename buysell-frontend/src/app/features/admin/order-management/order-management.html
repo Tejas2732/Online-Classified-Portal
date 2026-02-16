@@ -1,0 +1,133 @@
+<div class="order-card">
+  <div class="header-flex">
+    <h2>Order Management</h2>
+    <span class="badge">Total Transactions: {{ orders.length }}</span>
+  </div>
+
+  <div class="table-container">
+    <table *ngIf="!loading">
+      <thead>
+        <tr>
+          <th>Order #</th>
+          <th>Product</th>
+          <th>Buyer</th>
+          <th>Seller</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orders">
+          <td><span class="order-id">#{{ o.orderNumber }}</span></td>
+          <td>
+            <div class="product-name">{{ o.productName }}</div>
+            <!-- <div class="small-id">ID: {{ o.productId }}</div> -->
+          </td>
+          <td>{{ o.buyerName }}</td>
+          <td>{{ o.sellerName }}</td>
+          <td><span class="amount-text">₹{{ o.totalAmount }}</span></td>
+          <td>
+            <span class="status-pill" [ngClass]="{
+              'status-completed': o.status === 'COMPLETED' || o.status === 'DELIVERED',
+              'status-pending': o.status === 'PENDING' || o.status === 'PLACED',
+              'status-cancelled': o.status === 'CANCELLED',
+              'status-shipped': o.status === 'SHIPPED'
+            }">
+              {{ o.status }}
+            </span>
+          </td>
+          <td class="date-text">{{ o.createdAt | date:'shortDate' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="loading" class="loading-spinner">Fetching transaction details...</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="order-card">
+  <div class="header-flex" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>Order Management</h2>
+    <span class="badge" style="background: #f1f5f9; padding: 8px 15px; border-radius: 8px; color: #475569;">
+      Total Transactions: {{ orders.length }}
+    </span>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Order #</th>
+          <th>Customer</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Date & Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orders">
+          <td><span class="order-id">#{{ o.orderNumber }}</span></td>
+          <td>
+            <div style="font-weight: 500;">{{ o.buyerName }}</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">Customer ID: {{ o.userId }}</div>
+          </td>
+          <td><span class="amount-text">₹{{ o.totalAmount }}</span></td>
+          <td>
+            <span class="status-pill" [ngClass]="{
+              'status-completed': o.status === 'COMPLETED' || o.status === 'DELIVERED',
+              'status-pending': o.status === 'PENDING' || o.status === 'PLACED',
+              'status-cancelled': o.status === 'CANCELLED',
+              'status-shipped': o.status === 'SHIPPED'
+            }">
+              {{ o.status }}
+            </span>
+          </td>
+          <td class="date-text">{{ o.createdAt | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="orders.length === 0" style="text-align: center; padding: 40px; color: #94a3b8;">
+    <div style="font-size: 3rem;">📄</div>
+    <p>No orders have been placed yet.</p>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+<!-- <h2>Order Management</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Order #</th>
+    <th>User</th>
+    <th>Total</th>
+    <th>Status</th>
+    <th>Date</th>
+  </tr>
+
+  <tr *ngFor="let o of orders">
+    <td>{{ o.orderNumber }}</td>
+    <td>{{ o.userName }}</td> 
+    <td>₹{{ o.totalAmount }}</td>
+    <td>{{ o.status }}</td>
+    <td>{{ o.createdAt | date:'short' }}</td>
+  </tr>
+</table> -->

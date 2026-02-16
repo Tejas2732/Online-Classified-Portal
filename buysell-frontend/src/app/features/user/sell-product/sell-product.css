@@ -1,0 +1,73 @@
+.sell-wrapper {
+    max-width: 600px;
+    margin: 30px auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sell-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #1976d2;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .btn-submit:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  

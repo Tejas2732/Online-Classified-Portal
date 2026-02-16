@@ -1,0 +1,62 @@
+.receipt-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .receipt-card {
+    width: 380px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  hr {
+    margin: 15px 0;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 15px 0;
+  }
+  
+  .download {
+    display: block;
+    text-align: center;
+    margin: 12px 0;
+    text-decoration: none;
+    color: #1976d2;
+  }
+  
+  .primary-btn {
+    width: 100%;
+    padding: 10px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

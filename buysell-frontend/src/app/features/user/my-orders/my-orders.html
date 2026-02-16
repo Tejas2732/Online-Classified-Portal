@@ -1,0 +1,80 @@
+<div class="orders-wrapper">
+  <h2>My Orders</h2>
+
+  <div class="loading" *ngIf="loading">Loading orders...</div>
+
+  <div class="empty" *ngIf="orders.length === 0 && !loading">
+    No orders found
+  </div>
+
+  <div class="table-card" *ngIf="orders.length">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Order #</th>
+          <th>Product</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let o of orders">
+          <td>#{{ o.orderNumber }}</td>
+          <td>{{ o.productName }}</td>
+          <td>{{ o.quantity }}</td>
+          <td class="price">₹{{ o.totalAmount }}</td>
+          <td>
+            <span class="status" [ngClass]="o.status?.toLowerCase()">
+              {{ o.status }}
+            </span>
+          </td>
+          <td>{{ o.createdAt | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>My Orders</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="orders.length === 0 && !loading">
+  No orders found
+</div>
+
+<table *ngIf="orders.length" border="1" width="100%">
+  <tr>
+    <th>Order #</th>
+    <th>Product</th>
+    <th>Qty</th>
+    <th>Total</th>
+    <th>Status</th>
+    <th>Date</th> 
+  </tr>
+
+  <tr *ngFor="let o of orders">
+    <td>{{ o.orderNumber }}</td>
+    <td>{{ o.productName }}</td>
+    <td>{{ o.quantity }}</td>
+    <td>₹{{ o.totalAmount }}</td>
+    <td>{{ o.status }}</td>
+    <td>{{ o.createdAt | date:'short' }}</td>
+  </tr>
+</table> -->

@@ -1,0 +1,91 @@
+a{
+    cursor: pointer;
+}
+
+/* ===============================
+   REGISTRATION PAGE SPECIFIC
+================================ */
+
+/* Wrapper to center the registration card */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* Slightly taller to accommodate more fields */
+  padding: 40px 20px;
+}
+
+/* Reusing the card style for consistency */
+.auth-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Slightly wider for longer forms */
+}
+/* Specific style for the register button when disabled */
+.submit-btn:disabled {
+  opacity: 0.5;      /* Makes it look "blurred" or faded */
+  filter: grayscale(1); /* Removes color for a neutral disabled look */
+  cursor: not-allowed;
+  transform: scale(1); /* Prevents any hover animations */
+}
+
+/* Optional: Add a smooth transition so it "lights up" when valid */
+.submit-btn {
+  transition: all 0.3s ease;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none; /* Prevents users from breaking your layout by dragging the corner */
+  margin-bottom: 5px;
+}
+
+/* Header styling */
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Specific styling for Textarea to match inputs */
+textarea {
+  min-height: 80px;
+  resize: vertical; /* Allows user to resize height only */
+}
+
+/* Error messages */
+.error-message {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: -8px;
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+
+/* Form Action Button */
+.auth-card button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+/* Login Link Section */
+.auth-card p {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.auth-card a {
+  cursor: pointer;
+  font-weight: 600;
+}

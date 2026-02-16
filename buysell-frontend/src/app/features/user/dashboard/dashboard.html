@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>User Dashboard</h2>
+  <hr>
+
+  <div class="dashboard-grid">
+
+    <div class="dash-card" (click)="go('/user/buy')">
+      <div class="icon">🛒</div>
+      <h3>Buy Products</h3>
+      <p>Browse and purchase items</p>
+    </div>
+
+    <div class="dash-card" (click)="go('/user/sell')">
+      <div class="icon">➕</div>
+      <h3>Sell Product</h3>
+      <p>List a product for sale</p>
+    </div>
+
+    <div class="dash-card" (click)="go('/user/orders')">
+      <div class="icon">📦</div>
+      <h3>My Orders</h3>
+      <p>View purchase history</p>
+    </div>
+
+    <div class="dash-card" (click)="go('/user/listings')">
+      <div class="icon">📋</div>
+      <h3>My Listings</h3>
+      <p>Manage your products</p>
+    </div>
+
+    <div class="dash-card" (click)="go('/user/wallet')">
+      <div class="icon">💰</div>
+      <h3>My Wallet</h3>
+      <p>Balance & transactions</p>
+    </div>
+
+    <div class="dash-card" (click)="go('/user/profile')">
+      <div class="icon">👤</div>
+      <h3>My Profile</h3>
+      <p>View & edit profile</p>
+    </div>
+
+    <div class="dash-card logout" (click)="logout()">
+      <div class="icon">🚪</div>
+      <h3>Logout</h3>
+      <p>Exit your account</p>
+    </div>
+
+  </div>
+</div>
+  

@@ -1,0 +1,124 @@
+<h2>Checkout</h2>
+
+<div *ngIf="product" class="checkout-card">
+  <p><b>Product:</b> {{ product.name }}</p>
+  <p><b>Price:</b> ₹{{ product.price }}</p>
+ 
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <input type="number"
+           formControlName="quantity"
+           [max]="product.quantity">
+    <br>
+
+    <div class="payment-options">
+      <label>
+        <input type="radio" value="WALLET" formControlName="paymentMethod">
+        Wallet
+      </label>
+    
+      <label>
+        <input type="radio" value="CARD" formControlName="paymentMethod">
+        Card
+      </label>
+    </div>
+    
+    <!-- <label>
+      <input type="radio" value="WALLET" formControlName="paymentMethod">
+      Wallet
+    </label>
+
+    <label>
+      <input type="radio" value="CARD" formControlName="paymentMethod">
+      Card
+    </label> -->
+
+    <div *ngIf="form.value.paymentMethod === 'CARD'" class="card-box">
+      <!-- <input placeholder="Card Number" formControlName="cardNumber"><br>
+      <input placeholder="Card Holder Name" formControlName="cardHolderName"><br>
+      <input placeholder="Expiry (MM/YY)" formControlName="expiry"><br>
+      <input placeholder="CVV" formControlName="cvv"><br> -->
+         <input
+            placeholder="Card Number"
+            formControlName="cardNumber"
+            maxlength="16"
+            inputmode="numeric"
+          />
+
+          <div class="error" *ngIf="form.get('cardNumber')?.invalid && form.get('cardNumber')?.touched">
+            Card number must be 16 digits
+          </div>
+
+
+          <input
+            placeholder="Card Holder Name"
+            formControlName="cardHolderName"
+          />
+
+          <div class="error" *ngIf="form.get('cardHolderName')?.invalid && form.get('cardHolderName')?.touched">
+            Name must contain only letters (3–26 chars)
+          </div>
+
+
+          <!-- <input
+            placeholder="MM/YY"
+            formControlName="expiry"
+            maxlength="5"
+          /> -->
+
+          <input
+          placeholder="Expiry (MM/YY)"
+          formControlName="expiry"
+          maxlength="5"
+          (input)="onExpiryInput($event)"
+        >
+
+          <div class="error"
+              *ngIf="form.get('expiry')?.errors?.['invalidFormat']">
+            Invalid expiry format (MM/YY)
+          </div>
+
+       
+
+
+          <div class="error"
+              *ngIf="form.get('expiry')?.errors?.['expired']">
+            Card has expired
+          </div>
+
+
+          <!-- <div class="error" *ngIf="form.get('expiry')?.errors?.invalidFormat">
+            Invalid format (MM/YY)
+          </div>
+
+          <div class="error" *ngIf="form.get('expiry')?.errors?.expired">
+            Card is expired
+          </div> -->
+
+
+          <input
+            placeholder="CVV"
+            formControlName="cvv"
+            maxlength="3"
+            inputmode="numeric"
+          />
+
+          <div class="error" *ngIf="form.get('cvv')?.invalid && form.get('cvv')?.touched">
+            CVV must be 3 digits
+          </div>
+
+    </div>
+
+    <!-- <button type="submit" [disabled]="loading">
+      Confirm Order
+    </button> -->
+
+    <button
+      type="submit"
+      [disabled]="loading || (form.value.paymentMethod === 'CARD' && form.invalid)">
+      Confirm Order
+    </button>
+
+
+  </form>
+</div>

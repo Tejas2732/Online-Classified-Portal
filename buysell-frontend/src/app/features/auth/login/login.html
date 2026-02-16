@@ -1,0 +1,202 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="email" placeholder="Email" formControlName="email">
+      <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email required
+      </div>
+
+      <input type="password" placeholder="Password" formControlName="password">
+      <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password min 6 chars required
+      </div>
+
+      <div class="forgot-link-container">
+        <a (click)="openResetModal()" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit" [disabled]="loading">Login</button>
+    </form>
+ 
+    <p>
+      Don’t have an account?
+      <a (click)="naviagteToRegister()">Register</a>
+    </p>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showResetModal">
+  <div class="modal-card">
+    <h3>Reset Password</h3>
+    <p>Enter your details to change your password directly.</p>
+
+    <form [formGroup]="resetForm" (ngSubmit)="handleResetPassword()">
+      <div class="form-group">
+        <input type="email" placeholder="Registered Email" formControlName="email">
+        <div class="error-message" *ngIf="resetForm.get('email')?.invalid && resetForm.get('email')?.touched">
+          Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="New Password" formControlName="newPassword">
+        <div class="error-message" *ngIf="resetForm.get('newPassword')?.invalid && resetForm.get('newPassword')?.touched">
+          Minimum 6 characters required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="Confirm New Password" formControlName="confirmPassword">
+        <div class="error-message" *ngIf="resetForm.hasError('mismatch') && resetForm.get('confirmPassword')?.touched">
+          Passwords do not match!
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel-btn" (click)="closeResetModal()">Cancel</button>
+        <button type="submit" class="reset-btn" [disabled]="resetForm.invalid || loading">
+          Update Password
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="email" placeholder="Email" formControlName="email">
+      <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email required
+      </div>
+
+      <input type="password" placeholder="Password" formControlName="password">
+      <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password min 6 chars
+      </div>
+
+      <div class="forgot-link-container">
+        <a (click)="openResetModal()" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit" [disabled]="loading">Login</button>
+    </form>
+ 
+    <p>
+      Don’t have an account?
+      <a (click)="naviagteToRegister()">Register</a>
+    </p>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showResetModal">
+  <div class="modal-card">
+    <h3>Reset Password</h3>
+    <p>Enter your details to change your password directly.</p>
+
+    <form [formGroup]="resetForm" (ngSubmit)="handleResetPassword()">
+      <div class="form-group">
+        <input type="email" placeholder="Registered Email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="New Password" formControlName="newPassword">
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="Confirm New Password" formControlName="confirmPassword">
+        <div class="error-message" *ngIf="resetForm.hasError('mismatch') && resetForm.get('confirmPassword')?.touched">
+          Passwords do not match!
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel-btn" (click)="closeResetModal()">Cancel</button>
+        <button type="submit" class="reset-btn" [disabled]="resetForm.invalid || loading">
+          Update Password
+        </button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="email" placeholder="Email" formControlName="email">
+      <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email required
+      </div>
+
+      <input type="password" placeholder="Password" formControlName="password">
+      <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password min 6 chars
+      </div>
+
+      <button type="submit" [disabled]="loading">Login</button>
+    </form>
+ 
+    <p>
+      Don’t have an account?
+      <a (click)="naviagteToRegister()" >Register</a>
+    </p>
+  </div>
+</div> -->
+
+
+
+
+ 
+
+
+
+
+
+
+
+<!-- <h2>Login</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input type="email" placeholder="Email" formControlName="email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+    Valid email required
+  </div>
+
+  <input type="password" placeholder="Password" formControlName="password">
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+    Password min 6 chars
+  </div>
+
+  <button type="submit" [disabled]="loading">Login</button>
+</form>
+<p>
+  Don’t have an account?
+  <a routerLink="/register">Register</a>
+</p> -->

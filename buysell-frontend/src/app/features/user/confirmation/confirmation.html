@@ -1,0 +1,87 @@
+<div class="receipt-wrapper" *ngIf="receipt">
+  <div class="receipt-card">
+
+    <h2 class="title">Order Confirmed 🎉</h2>
+    <p class="subtitle">Thank you for your purchase</p>
+
+    <hr>
+
+    <div class="row">
+      <span>Order No</span>
+      <span>#{{ receipt.orderNumber }}</span>
+    </div>
+
+    <div class="row">
+      <span>Product</span>
+      <span>{{ receipt.productName }}</span>
+    </div>
+
+    <div class="row">
+      <span>Quantity</span>
+      <span>{{ receipt.quantity }}</span>
+    </div>
+
+    <div class="row">
+      <span>Payment Method</span>
+      <span>{{ receipt.paymentMethod }}</span>
+    </div>
+
+    <div class="row">
+      <span>Date</span>
+      <span>{{ receipt.orderDate | date:'medium' }}</span>
+    </div>
+
+    <hr>
+
+    <div class="total">
+      <span>Total Paid</span>
+      <span>₹{{ receipt.totalAmount }}</span>
+    </div>
+
+    <a
+      *ngIf="receipt.receiptUrl"
+      class="download"
+      [href]="receipt.receiptUrl"
+      target="_blank"
+    >
+      ⬇ Download Receipt
+    </a>
+
+    <button class="primary-btn" (click)="goToOrders()">
+      Go to My Orders
+    </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Order Confirmed 🎉</h2>
+
+<div *ngIf="receipt">
+  <p><b>Order #:</b> {{ receipt.orderNumber }}</p>
+  <p><b>Product:</b> {{ receipt.productName }}</p>
+  <p><b>Quantity:</b> {{ receipt.quantity }}</p>
+  <p><b>Total:</b> ₹{{ receipt.totalAmount }}</p>
+  <p><b>Payment:</b> {{ receipt.paymentMethod }}</p>
+  <p><b>Date:</b> {{ receipt.orderDate | date:'short' }}</p>
+
+  <a *ngIf="receipt.receiptUrl" [href]="receipt.receiptUrl" target="_blank">
+    Download Receipt
+  </a>
+</div>
+
+<hr>
+
+<button (click)="c()" >
+  Go to My Orders
+</button>
+  -->

@@ -1,0 +1,136 @@
+<div class="profile-container">
+  
+  <div class="profile-image-wrapper">
+    <span class="profile-initial">{{ form.get('fullName')?.value?.charAt(0) || 'U' }}</span>
+  </div>
+
+  <h2>My Profile</h2>
+
+  <form [formGroup]="form" (ngSubmit)="save()" class="profile-form">
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input placeholder="Enter Full Name" formControlName="fullName" 
+             [class.input-error]="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+      <div class="error-box" *ngIf="form.get('fullName')?.touched">
+        <small *ngIf="form.get('fullName')?.hasError('required')">Name is required.</small>
+        <small *ngIf="form.get('fullName')?.hasError('minlength')">Minimum 3 characters required.</small>
+        <small *ngIf="form.get('fullName')?.hasError('pattern')">Only alphabets are allowed.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email (Read-only)</label>
+      <input formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input placeholder="10-digit mobile number" formControlName="phoneNumber"
+             [class.input-error]="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
+      <div class="error-box" *ngIf="form.get('phoneNumber')?.touched">
+        <small *ngIf="form.get('phoneNumber')?.hasError('required')">Phone number is required.</small>
+        <small *ngIf="form.get('phoneNumber')?.hasError('pattern')">Must be 10 digits starting with 6-9.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea placeholder="Your permanent address" formControlName="address"
+                [class.input-error]="form.get('address')?.invalid && form.get('address')?.touched"></textarea>
+      <div class="error-box" *ngIf="form.get('address')?.touched">
+        <small *ngIf="form.get('address')?.hasError('required')">Address is required.</small>
+        <small *ngIf="form.get('address')?.hasError('minlength')">Minimum 10 characters required.</small>
+        <small *ngIf="form.get('address')?.hasError('maxlength')">Max 200 characters allowed.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loading || form.invalid" class="save-btn">
+      {{ loading ? 'Saving...' : 'Save Changes' }}
+    </button>
+
+    <!-- Changes karna he  -->
+    <!-- <button (click)="deleteAccPermanetly()" >
+      Delete Account
+    </button> -->
+    <button type="button" (click)="deleteAccPermanetly()" class="delete-btn">
+      Delete Account Permanently
+    </button>
+
+
+  </form>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="profile-container">
+  
+  <div class="profile-image-wrapper">
+    <span style="font-size: 40px; font-weight: bold; color: #2563eb;">{{ form.get('fullName')?.value?.charAt(0) || 'U' }}</span>
+  </div>
+
+  <h2>My Profile</h2>
+
+  <form [formGroup]="form" (ngSubmit)="save()" class="profile-form">
+
+    <label small>Full Name</label>
+    <input placeholder="Full Name" formControlName="fullName">
+
+    <div class="error-message" *ngIf="form.get('fullName')?.hasError('pattern') && form.get('fullName')?.touched">
+       <small>Only alphabets and spaces are allowed.</small>
+    </div>
+
+    <label small>Email (Cannot be changed)</label>
+    <input 
+      placeholder="Email"
+      formControlName="email"
+      [disabled]="true"
+    />
+
+    <label small>Phone Number</label>
+    <input placeholder="Phone Number" formControlName="phoneNumber">
+
+    <label small>Address</label>
+    <textarea placeholder="Address" formControlName="address"></textarea>
+
+    <button type="submit" [disabled]="loading || form.invalid" class="save-btn">
+      {{ loading ? 'Saving...' : 'Save Changes' }}
+    </button>
+
+  </form>
+</div>
+ -->
+
+
+
+
+
+
+
+
+<!-- <h2>My Profile</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <input placeholder="Full Name" formControlName="fullName"><br><br>
+
+  <input 
+  placeholder="Email"
+  formControlName="email"
+  [disabled]="true"
+/>
+
+
+  <input placeholder="Phone Number" formControlName="phoneNumber"><br><br>
+
+  <textarea placeholder="Address" formControlName="address"></textarea><br><br>
+
+  <button type="submit" [disabled]="loading">
+    Save Changes
+  </button>
+
+</form> -->

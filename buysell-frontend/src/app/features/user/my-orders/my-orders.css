@@ -1,0 +1,67 @@
+.orders-wrapper {
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+  }
+  
+  .loading,
+  .empty {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+  }
+  
+  .table-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 10px;
+    font-weight: 600;
+  }
+  
+  td {
+    padding: 10px;
+    border-top: 1px solid #eee;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* STATUS COLORS */
+  .status.completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .status.pending {
+    background: #fff8e1;
+    color: #ff8f00;
+  }
+  
+  .status.cancelled {
+    background: #ffebee;
+    color: #c62828;
+  }
+  

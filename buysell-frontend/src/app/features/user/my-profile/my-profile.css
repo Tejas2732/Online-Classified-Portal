@@ -1,0 +1,126 @@
+ /* ===============================
+   PROFILE PAGE SPECIFIC
+================================ */
+
+.profile-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red color */
+  color: white;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #bb2d3b;
+}
+
+/* Central Logo / Profile Picture */
+.profile-image-wrapper {
+  width: 110px;
+  height: 110px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.profile-image-wrapper i, 
+.profile-image-wrapper img {
+  font-size: 50px;
+  color: #9ca3af;
+}
+
+.profile-container h2 {
+  margin-bottom: 25px;
+  color: #111827;
+  font-size: 1.5rem;
+}
+
+/* Form Layout */
+.profile-form {
+  text-align: left; /* Keep labels/inputs aligned left */
+}
+/* Container for each input + label */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 5px;
+}
+
+/* Error message box */
+.error-box {
+  min-height: 18px; /* Reserves space so form doesn't jump */
+  margin-top: 4px;
+}
+
+.error-box small {
+  display: block;
+  color: #dc2626;
+  font-size: 0.75rem;
+}
+
+/* Red border for invalid fields */
+.input-error {
+  border-color: #dc2626 !important;
+  background-color: #fff1f2;
+}
+
+/* Initial inside the logo */
+.profile-initial {
+  font-size: 40px; 
+  font-weight: bold; 
+  color: #2563eb;
+  text-transform: uppercase;
+}
+
+/* Save button disabled state */
+.save-btn:disabled {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+}
+/* Style for the Disabled Email Field */
+input:disabled {
+  background-color: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Save Button Styling */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}

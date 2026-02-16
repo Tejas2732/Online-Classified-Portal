@@ -1,0 +1,114 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2>Admin Dashboard</h2>
+    <p class="subtitle">Welcome back, Overview of your marketplace platform.</p>
+  </div>
+
+  <div *ngIf="loading" class="loader-box">
+    <div class="spinner"></div>
+    <p>Loading platform statistics...</p>
+  </div>
+
+  <div class="stats-grid" *ngIf="stats && !loading">
+    <div class="stat-card blue">
+      <div class="stat-icon">👥</div>
+      <div class="stat-info">
+        <h3>{{ stats.totalUsers }}</h3>
+        <p>Total Users</p>
+      </div>
+    </div>
+
+    <div class="stat-card green">
+      <div class="stat-icon">📦</div>
+      <div class="stat-info">
+        <h3>{{ stats.totalProducts }}</h3>
+        <p>Total Products</p>
+      </div>
+    </div>
+
+    <div class="stat-card orange">
+      <div class="stat-icon">🛍️</div>
+      <div class="stat-info">
+        <h3>{{ stats.totalOrders }}</h3>
+        <p>Total Orders</p>
+      </div>
+    </div>
+
+    <!-- <div class="stat-card purple">
+      <div class="stat-icon">💰</div>
+      <div class="stat-info">
+        <h3>₹{{ stats.totalSalesAmount || '0' }}</h3>
+        <p>Platform Revenue</p>
+      </div>
+    </div> -->
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="management-section">
+    <h3>Quick Management</h3>
+    <div class="admin-grid">
+      
+      <div class="admin-dash-card" (click)="go('/admin/users')">
+        <div class="admin-icon">🛡️</div>
+        <div class="admin-text">
+          <h4>Manage Users</h4>
+          <p>Verify or block user accounts</p>
+        </div>
+      </div>
+
+      <div class="admin-dash-card" (click)="go('/admin/products')">
+        <div class="admin-icon">🔍</div>
+        <div class="admin-text">
+          <h4>Review Products</h4>
+          <p>Approve or remove listings</p>
+        </div>
+      </div>
+
+      <div class="admin-dash-card" (click)="go('/admin/orders')">
+        <div class="admin-icon">📜</div>
+        <div class="admin-text">
+          <h4>Order Logs</h4>
+          <p>Monitor all platform sales</p>
+        </div>
+      </div>
+
+      <div class="admin-dash-card" (click)="go('/admin/profile')">
+        <div class="admin-icon">⚙️</div>
+        <div class="admin-text">
+          <h4>Admin Profile</h4>
+          <p>Update personal settings</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>Admin Dashboard</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="stats">
+  <p>Total Users: {{ stats.totalUsers }}</p>
+  <p>Total Products: {{ stats.totalProducts }}</p>
+  <p>Total Orders: {{ stats.totalOrders }}</p>
+</div> 
+  -->
