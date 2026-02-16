@@ -1,0 +1,11 @@
+CREDENTIAL for ADMIN
+admin@buysell.com    ->   admin123
+
+
+
+
+// if not work than call me
+npm install @angular/cdk@^20.0.0 @angular/material@^20.0.0
+rm -rf node_modules package-lock.json
+npm install --legacy-peer-deps
+npm install
